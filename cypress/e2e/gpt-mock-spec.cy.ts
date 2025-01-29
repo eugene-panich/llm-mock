@@ -70,9 +70,6 @@ describe('Mock LLM Spec for chatGPT', () => {
     const requestData = {
         model: 'gpt-3.5-turbo',
         temperature: 1,
-        top_p: 1,
-        frequency_penalty: 0,
-        presence_penalty: 0,
         n: 1,
         stream: false,
         messages: [
