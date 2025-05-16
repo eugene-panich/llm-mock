@@ -8,7 +8,17 @@
 
 The purpose of this project is to provide a quick-to-set-up standalone local mock LLM API framework running on localhost for developing with Large Language Models such as Chat-GPT.
 
-This can be used for testing API code and logic before deploying to live servers, quickly producing API endpoints for rapid prototyping for developing frontend clients for web or mobile or working off-line when there is no internet connection. Using a local mock is quicker and cheaper (i.e FREE) than using commerical LLM's for initial set-up work and can be convenient when there is no internet connection available to access LLM endpoints.
+This can be used for testing API code and logic before deploying to live servers, quickly producing API endpoints for rapid prototyping for developing frontend clients for web or mobile or working off-line when there is no internet connection.   
+
+   
+The advantages of using a local mock LLM endpoint are:   
+
+- Quicker and cheaper (i.e FREE) than using commerical LLM's for initial set-up work
+-    Easier and less resource intensive than setting up a full blown local LLM for frontend dev work
+-    Can return consistent and known responses to test frontend UI and logic
+-    Convenient when there is no external internet connection available
+-    Full visibility and debugging of LLM requests
+-    Can validate LLM requests on the local server
 
 The project is built using MSW and can be run directly on a local machine or in docker containers. It is further adapted from the general mock-api framework here: https://github.com/piyook/mock-api-framework-template
 
