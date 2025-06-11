@@ -41,7 +41,7 @@ const mockGPTResponse = async () => {
 
 function handler(pathName: string) {
 	return [
-		http.get(`/${pathName}`, async ({ request }) => {
+		http.get(`/${pathName}`, async () => {
 			return HttpResponse.json(await mockGPTResponse());
 		}),
 		http.post(`/${pathName}`, async ({ request }) => {

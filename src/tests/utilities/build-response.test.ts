@@ -1,5 +1,5 @@
 /* eslint-disable  @typescript-eslint/naming-convention */
-import { expect, test, describe, vi } from 'vitest';
+import { expect, test, describe } from 'vitest';
 import { type DefaultBodyType, type StrictRequest } from 'msw';
 import { buildResponse } from '../../utilities/build-response.js';
 
@@ -7,7 +7,7 @@ describe('build response function works as expected', async () => {
 	test('provides correct response with correct request', async () => {
 		process.env.VALIDATE_REQUESTS = 'ON';
 		process.env.LOG_REQUESTS = 'OFF';
-		const request = {
+		const _request = {
 			async json() {
 				return new Promise((resolve) => {
 					resolve({
