@@ -46,7 +46,7 @@ export default async function getApiPaths() {
 	// Return a promise.all to resolve all promises that will themselves return the api handlers function that can be called with the api paths
 	return Promise.all(apiHandlersPromises)
 		.then((handlers) => {
-			for (const [index, handler] of handlers.entries()) {
+			for (const [_index, handler] of handlers.entries()) {
 				// Add new handlers with the desired apiPath to return array - remember to spread these out as may be more than one
 				apiHandlers.push(...handler.default(`${prefix}`));
 			}

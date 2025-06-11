@@ -1,5 +1,5 @@
 /* eslint-disable  @typescript-eslint/naming-convention */
-import { expect, test, describe, vi } from 'vitest';
+import { expect, test, describe } from 'vitest';
 import { type DefaultBodyType, type StrictRequest } from 'msw';
 import { validateRequest } from '../../utilities/validate-request.js';
 
