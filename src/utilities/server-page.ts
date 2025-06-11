@@ -5,8 +5,8 @@ import { db } from '../models/db.js';
 const prefix = process.env?.LLM_URL_ENDPOINT ?? '';
 
 const homePage = (apiPaths: string[]) => {
-    const htmlString = (dbEntries: number) =>
-        `<html>
+	const htmlString = (dbEntries: number) =>
+		`<html>
             <body style="margin: 0px; background-color: #383838; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height:100vh; font-family: sans-serif;">
 
             <div style="text-align: center; width: 80%;padding:50px; border-radius: 10px; display: flex; flex-direction: column; justify-content: center; align-items: center; color:white">
@@ -69,17 +69,17 @@ const homePage = (apiPaths: string[]) => {
         </html>
     `;
 
-    return [
-        http.get(`/`, () => {
-            const dbEntries = db.llm.getAll()?.length ?? 1;
-            return new HttpResponse(htmlString(dbEntries - 1), {
-                status: 200,
-                headers: {
-                    'Content-Type': 'text/html',
-                },
-            });
-        }),
-    ];
+	return [
+		http.get(`/`, () => {
+			const dbEntries = db.llm.getAll()?.length ?? 1;
+			return new HttpResponse(htmlString(dbEntries - 1), {
+				status: 200,
+				headers: {
+					'Content-Type': 'text/html',
+				},
+			});
+		}),
+	];
 };
 
 export default homePage;

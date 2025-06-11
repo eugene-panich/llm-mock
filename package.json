@@ -7,8 +7,8 @@
         "rebuild": "docker compose down --volumes && docker compose up -d --force-recreate --build",
         "restart": "npm stop && npm start",
         "prepare": "husky || true",
-        "lint": "xo 'src/**/*.{js,jsx,ts,tsx}'",
-        "lint-fix": "xo 'src/**/*.{js,jsx,ts,tsx}' --fix",
+        "lint": "oxlint 'src/**/*.{js,jsx,ts,tsx}'",
+        "lint-fix": "oxlint 'src/**/*.{js,jsx,ts,tsx}' --fix",
         "pretty": "prettier 'src/**/*.{js,jsx,ts,tsx,css,scss,md}' --check",
         "pretty-fix": "prettier 'src/**/*.{js,jsx,ts,tsx,css,scss,md}' --write",
         "test:unit": "vitest run",
@@ -35,21 +35,21 @@
         "pretty-print-json": "^3.0.4",
         "tsx": "^4.20.1",
         "typescript": "^5.8.3",
-        "vitest": "^3.2.3",
-        "xo": "^0.60.0"
+        "vitest": "^3.2.3"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.8.1",
         "@commitlint/config-conventional": "^19.8.1",
         "husky": "^9.1.7",
         "lint-staged": "^16.1.0",
+        "oxlint": "^1.0.0",
         "prettier": "3.5.3",
         "start-server-and-test": "^2.0.12",
         "validate-branch-name": "^1.3.2"
     },
     "lint-staged": {
-        "src/**/*.{js,jsx,ts,tsx}": "npm run lint",
-        "src/**/*.{js,jsx,ts,tsx,css,scss,md}": "npm run pretty"
+        "src/**/*.{js,jsx,ts,tsx}": "oxlint",
+        "src/**/*.{js,jsx,ts,tsx,css,scss,md}": "oxlint"
     },
     "commitlint": {
         "extends": [
